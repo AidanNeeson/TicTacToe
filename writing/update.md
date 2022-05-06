@@ -1,19 +1,17 @@
 # CMPSC 302 Project Update
 
-Please provide responses to the following questions.
-
 ## Describe the progress you've made toward completing your project.
 
-`TODO: Respond to above prompt.`
+Since I have started, I decided to scrap my original idea. I got stuck working on my own and went to the internet to seek answers and found that my project is significantly more complicated than I thought it would have been. I managed to be able to draw on the screen, but that was as far as I was able to get without tons of extensions that I knew nothing about. So I gave up and have entirely pivoted my project to something simpler. I am now pursuing a Tic Tac Toe game, and this is my progress on it so far: As for the HTML, I have fully implemented it as of now. Unless I decide to add more elements for other features or decoration, everything I need is there for a basic framework of the game. I have created a title heading, the divs for the grid of the nine squares, a heading that displays the current player's turn/a win or tie, and a restart button to play again. For the CSS, I have done very light amounts of CSS just to ensure the grid is displayed on the screen properly, so when I start doing more Javascript I have something to work with. So far I have set up the grid, resized it and given it a border, as well as giving each individual cell a border of their own, this defines the playing field. When it comes to Javascript, I have just done some basic variable declarations and a couple of simple functions to start off with. I set up some constants that read in the game info, define all possible winning combinations, and serve as functions that will later update the current status of the game. I also defined some temporary variables that initialize the way the game should start, as well as setting the first status message to what it should be when the game starts off. That is all the progress I have made so far on this game.
 
 ## What areas are still challenging? What are some unforeseen issues that have arisen?
 
-`TODO: Respond to above prompt.`
+Because I am not very good at Javascript, the actual functions that determine the gameplay I think are going to be hard for me to code. I get the idea, I just do not know how to translate that into Javascript at all. At first, I thought changing my project to Tic Tac Toe instead would be too easy and not worthy of a final project, but the more I think about it, it is probably more on my level because of how little I know about the language. As well as this, I want to push myself to make it look a lot nicer than I have been able to do before. From my experience working with CSS can be exhausting, so I feel this will be another challenge I will face.
 
 ## Detail one success that you've achieved.
 
-`TODO: Respond to above prompt.`
+One success that I have achieved is getting the basic framework of the game set up. When going in entirely blind, I was sort of lost at where to begin with this. After some experimenting and thinking, I managed to get the general layout of the game down in the way that I want it to be, so I am happy about this.
 
 ## In what, if any, areas would you like additional assistance?
 
-`TODO: Respond to above prompt`
+So far, all I could see needing additional assistance on is potentially the Javascript if I ever get stuck and do not know how to move forward. As well as this, I may need help in pushing my CSS even further. Also, because I have changed my project, I could also see potential for some kind of server implementation. This originally was not the plan, and still is not as of now, but if I end up needing to do it because of the switch, I might need help setting that up as well.
