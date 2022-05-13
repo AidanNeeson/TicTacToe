@@ -22,8 +22,10 @@ let gameCells = ["", "", "", "", "", "", "", "", ""]
 gameInfo.innerHTML = currentTurn();
 
 function playTurn(cell, cellIndex) {
+    let playerTurn = document.createElement("span");
     gameCells[cellIndex] = currentPlayer;
-    cell.innerHTML = currentPlayer;
+    playerTurn.innerText = `${currentPlayer}`;
+    cell.appendChild(playerTurn);
 }
 
 function switchTurn() {
