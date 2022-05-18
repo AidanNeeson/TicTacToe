@@ -40,6 +40,7 @@ function switchTurn() {
 function winCheck() {
     let win = false;
     let draw = !gameCells.includes("");
+    let winningPattern = null;
     for (let i = 0; i < 8; i++) {
         const winCon = winCons[i];
         let one = gameCells[winCon[0]];
@@ -52,6 +53,7 @@ function winCheck() {
 
         if (one === two && two == three) {
             win = true;
+            winningPattern = winCon;
             break;
         }
     }
@@ -59,6 +61,7 @@ function winCheck() {
     if (win) {
         gameInfo.innerHTML = winMessage();
         playing = false;
+        drawLine(winningPattern);
         return;
     }
 
@@ -83,12 +86,70 @@ function clickCell(cell) {
     }
 }
 
+function drawLine(winningPattern) {
+    let cellOne = document.querySelector(`[data-cell='${winningPattern[0]}']`);
+    let cellTwo = document.querySelector(`[data-cell='${winningPattern[2]}']`);
+
+    console.log(winningPattern);
+
+    if (winningPattern == winCons[0] || winningPattern == winCons[1] || winningPattern == winCons[2]) {
+        ax = cellOne.offsetLeft + 10;
+        ay = cellOne.offsetTop + (cellOne.offsetHeight / 2);
+        bx = cellTwo.offsetLeft + cellTwo.offsetWidth - 10;
+        by = cellTwo.offsetTop + (cellTwo.offsetHeight / 2);
+    }
+
+    if (winningPattern == winCons[3] || winningPattern == winCons[4] || winningPattern == winCons[5]) {
+        ax = cellOne.offsetLeft + (cellOne.offsetWidth / 2);
+        ay = cellOne.offsetTop + 10;
+        bx = cellTwo.offsetLeft + (cellTwo.offsetWidth / 2);
+        by = cellTwo.offsetTop + cellTwo.offsetHeight - 10;
+    }
+
+    if (winningPattern == winCons[6]) {
+        ax = cellOne.offsetLeft + 10;
+        ay = cellOne.offsetTop + 10;
+        bx = cellTwo.offsetLeft + cellTwo.offsetWidth - 10;
+        by = cellTwo.offsetTop + cellTwo.offsetHeight - 10;
+    }
+
+    if (winningPattern == winCons[7]) {
+        ax = cellOne.offsetLeft+ cellOne.offsetWidth - 10;
+        ay = cellOne.offsetTop + 10;
+        bx = cellTwo.offsetLeft + 10;
+        by = cellTwo.offsetTop  + cellOne.offsetHeight - 10;
+    }
+
+    if (ax > bx) {
+        bx = ax + bx;
+        ax = bx - ax;
+        bx = bx - ax;
+
+        by = ay + by;
+        ay = by - ay;
+        by = by - ay;
+    }
+
+    let distance = Math.sqrt(Math.pow(bx - ax, 2) + Math.pow(by - ay, 2));
+    let calc = Math.atan((by - ay) / (bx - ax));
+    let degree = calc * 180 / Math.PI;
+
+    let line = document.createElement('div');
+    line.setAttribute("id", "line");
+    line.setAttribute("style",
+        `position: absolute; height: 5px; transform-origin: top left; width: ${distance}; top: ${ay}px; left: ${ax}px; transform: rotate(${degree}deg); background: black;`
+    );
+    document.body.appendChild(line);
+}
+
 function restartGame() {
     playing = true;
     currentPlayer = "X";
     gameCells = ["", "", "", "", "", "", "", "", ""];
     gameInfo.innerHTML = currentTurn();
     document.querySelectorAll(".cell").forEach(cell => cell.innerHTML = "");
+    const e  = document.querySelector("#line");
+    e.parentElement.removeChild(e);
 }
 
 document.querySelectorAll(".cell").forEach(cell => cell.addEventListener("click", clickCell));
