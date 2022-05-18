@@ -178,7 +178,7 @@ function drawLine(winningPattern) {
     line.setAttribute("id", "line");
     // Set some of the style of the line div to allow for it to generate properly
     line.setAttribute("style",
-        `position: absolute; height: 5px; transform-origin: top left; width: ${distance}; top: ${ay}px; left: ${ax}px; transform: rotate(${degree}deg);`
+        `position: absolute; height: 5px; transform-origin: top left; width: ${distance}px; top: ${ay}px; left: ${ax}px; transform: rotate(${degree}deg);`
     );
     // Append the created line to the body of the HTML
     document.body.appendChild(line);
