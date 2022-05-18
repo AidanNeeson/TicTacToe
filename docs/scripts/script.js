@@ -137,7 +137,7 @@ function drawLine(winningPattern) {
     let line = document.createElement('div');
     line.setAttribute("id", "line");
     line.setAttribute("style",
-        `position: absolute; height: 5px; transform-origin: top left; width: ${distance}; top: ${ay}px; left: ${ax}px; transform: rotate(${degree}deg); background: black;`
+        `position: absolute; height: 5px; transform-origin: top left; width: ${distance}; top: ${ay}px; left: ${ax}px; transform: rotate(${degree}deg);`
     );
     document.body.appendChild(line);
 }

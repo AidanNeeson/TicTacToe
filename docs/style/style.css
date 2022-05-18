@@ -69,6 +69,12 @@ p {
     cursor: pointer;
     font-family: comic sans ms;
     font-size: 20pt;
+    border: 3px solid #402232;
+    color: #402232;
+}
+
+#line {
+    background: #402232;
 }
 
 .cell {
