@@ -176,3 +176,5 @@ Once in this folder, we need to tell git that there have been changes.
 - [ ] At the prompt, input the password associated with the `SSH Key` you created earlier in this exercise (yesterday)
 
 Once the process finishes successfully, we're done!
+
+Hi
