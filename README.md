@@ -22,6 +22,8 @@ This project is a Tic-Tac-Toe game that is built using HTML, CSS, and JavaScript
 
 Now you are a Tic-Tac-Toe-Pro, get to challenging your friends!
 
+---
+
 ## Code Sources
 
 HTML: [Webpage Index](./docs/index.html)
