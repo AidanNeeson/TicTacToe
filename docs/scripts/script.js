@@ -1,4 +1,4 @@
-// Declare some constants and initialize some variables
+// Declare constants and initialize variables that describe rules about the game, as well as some conditions for starting the game
 const gameInfo = document.getElementById("game-info")
 
 const winCons = [
